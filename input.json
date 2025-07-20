@@ -1,0 +1,159 @@
+{
+  "puzzle": {
+    "description": "Classic Zebra Puzzle (Einstein's Riddle)",
+    "houses": 5,
+    "attributes": {
+      "colors": ["Red", "Green", "White", "Yellow", "Blue"],
+      "nationalities": ["British", "Swedish", "Danish", "Norwegian", "German"],
+      "drinks": ["Tea", "Coffee", "Milk", "Beer", "Water"],
+      "cigarettes": ["Pall Mall", "Dunhill", "Blend", "Blue Master", "Prince"],
+      "pets": ["Dog", "Bird", "Cat", "Horse", "Zebra"]
+    },
+    "constraints": [
+      {
+        "type": "direct",
+        "description": "The British person lives in the red house",
+        "attribute1": "nationalities",
+        "value1": "British",
+        "attribute2": "colors",
+        "value2": "Red"
+      },
+      {
+        "type": "direct",
+        "description": "The Swedish person keeps dogs as pets",
+        "attribute1": "nationalities",
+        "value1": "Swedish",
+        "attribute2": "pets",
+        "value2": "Dog"
+      },
+      {
+        "type": "direct",
+        "description": "The Danish person drinks tea",
+        "attribute1": "nationalities",
+        "value1": "Danish",
+        "attribute2": "drinks",
+        "value2": "Tea"
+      },
+      {
+        "type": "leftOf",
+        "description": "The green house is on the left of the white house",
+        "attribute1": "colors",
+        "value1": "Green",
+        "attribute2": "colors",
+        "value2": "White"
+      },
+      {
+        "type": "direct",
+        "description": "The green house owner drinks coffee",
+        "attribute1": "colors",
+        "value1": "Green",
+        "attribute2": "drinks",
+        "value2": "Coffee"
+      },
+      {
+        "type": "direct",
+        "description": "The person who smokes Pall Mall rears birds",
+        "attribute1": "cigarettes",
+        "value1": "Pall Mall",
+        "attribute2": "pets",
+        "value2": "Bird"
+      },
+      {
+        "type": "direct",
+        "description": "The owner of the yellow house smokes Dunhill",
+        "attribute1": "colors",
+        "value1": "Yellow",
+        "attribute2": "cigarettes",
+        "value2": "Dunhill"
+      },
+      {
+        "type": "position",
+        "description": "The person in the middle house drinks milk",
+        "attribute": "drinks",
+        "value": "Milk",
+        "position": 3
+      },
+      {
+        "type": "position",
+        "description": "The Norwegian lives in the first house",
+        "attribute": "nationalities",
+        "value": "Norwegian",
+        "position": 1
+      },
+      {
+        "type": "neighbor",
+        "description": "The person who smokes Blend lives next to the one who keeps cats",
+        "attribute1": "cigarettes",
+        "value1": "Blend",
+        "attribute2": "pets",
+        "value2": "Cat"
+      },
+      {
+        "type": "neighbor",
+        "description": "The person who keeps horses lives next to the person who smokes Dunhill",
+        "attribute1": "pets",
+        "value1": "Horse",
+        "attribute2": "cigarettes",
+        "value2": "Dunhill"
+      },
+      {
+        "type": "direct",
+        "description": "The person who smokes Blue Master drinks beer",
+        "attribute1": "cigarettes",
+        "value1": "Blue Master",
+        "attribute2": "drinks",
+        "value2": "Beer"
+      },
+      {
+        "type": "direct",
+        "description": "The German smokes Prince",
+        "attribute1": "nationalities",
+        "value1": "German",
+        "attribute2": "cigarettes",
+        "value2": "Prince"
+      },
+      {
+        "type": "neighbor",
+        "description": "The Norwegian lives next to the blue house",
+        "attribute1": "nationalities",
+        "value1": "Norwegian",
+        "attribute2": "colors",
+        "value2": "Blue"
+      },
+      {
+        "type": "neighbor",
+        "description": "The person who smokes Blend has a neighbor who drinks water",
+        "attribute1": "cigarettes",
+        "value1": "Blend",
+        "attribute2": "drinks",
+        "value2": "Water"
+      }
+    ],
+    "questions": [
+      {
+        "description": "Who owned Zebra?",
+        "targetAttribute": "nationalities",
+        "givenAttribute": "pets",
+        "givenValue": "Zebra"
+      },
+      {
+        "description": "Who drinks water?",
+        "targetAttribute": "nationalities",
+        "givenAttribute": "drinks",
+        "givenValue": "Water"
+      },
+      {
+        "description": "Where smokes Dunhill?",
+        "targetAttribute": "house",
+        "givenAttribute": "cigarettes",
+        "givenValue": "Dunhill"
+      },
+      {
+        "description": "What pet does the tea drinker have?",
+        "targetAttribute": "pets",
+        "givenAttribute": "drinks",
+        "givenValue": "Tea"
+      }
+    ]
+  }
+}

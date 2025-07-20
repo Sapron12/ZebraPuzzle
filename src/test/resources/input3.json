@@ -1,0 +1,41 @@
+{
+  "puzzle": {
+    "description": "Test puzzle with unknown constraint",
+    "houses": 3,
+    "attributes": {
+      "colors": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "pets": [
+        "Dog",
+        "Cat",
+        "Bird"
+      ]
+    },
+    "constraints": [
+      {
+        "type": "direct",
+        "description": "Test direct constraint",
+        "attribute1": "colors",
+        "value1": "Red",
+        "attribute2": "pets",
+        "value2": "Dog"
+      },
+      {
+        "type": "unknown_type",
+        "description": "This is an unknown constraint type",
+        "someProperty": "someValue"
+      }
+    ],
+    "questions": [
+      {
+        "description": "Who owned Bird?",
+        "targetAttribute": "nationalities",
+        "givenAttribute": "pets",
+        "givenValue": "Bird"
+      }
+    ]
+  }
+}
