@@ -19,7 +19,7 @@ class ArgumentParserTest {
         assertEquals("output.json", config.outputFile)
         assertEquals("zebra-puzzle.log", config.logFile)
         assertEquals("choco", config.strategy)
-        assertEquals("console", config.outputFormat)
+        assertEquals("json", config.outputFormat)
         assertTrue(config.clearLog)
     }
     
