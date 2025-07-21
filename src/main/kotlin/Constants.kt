@@ -21,7 +21,7 @@ object Constants {
     }
 
     object FileNames {
-        const val DEFAULT_INPUT = "input.json"
+        const val DEFAULT_INPUT = "input_classic.json"
         const val DEFAULT_OUTPUT = "output.json"
         const val TEN_HOUSES_INPUT = "input10.json"
         const val TEN_HOUSES_OUTPUT = "output10.json"

@@ -1,0 +1,139 @@
+{
+  "puzzle": {
+    "description": "Classic Zebra Puzzle",
+    "houses": 5,
+    "attributes": {
+      "colors": ["Red", "Green", "White", "Yellow", "Blue"],
+      "nationalities": ["Englishman", "Spaniard", "Ukrainian", "Norwegian", "Japanese"],
+      "drinks": ["Tea", "Coffee", "Milk", "Orange Juice", "Water"],
+      "cigarettes": ["Old Gold", "Lucky Strike", "Kool", "Chesterfield", "Parliament"],
+      "pets": ["Dog", "Snails", "Fox", "Horse", "Zebra"]
+    },
+    "constraints": [
+      {
+        "type": "direct",
+        "description": "The Englishman lives in the red house",
+        "attribute1": "nationalities",
+        "value1": "Englishman",
+        "attribute2": "colors",
+        "value2": "Red"
+      },
+      {
+        "type": "direct",
+        "description": "The Spaniard keeps a dog",
+        "attribute1": "nationalities",
+        "value1": "Spaniard",
+        "attribute2": "pets",
+        "value2": "Dog"
+      },
+      {
+        "type": "direct",
+        "description": "Coffee is drunk in the green house",
+        "attribute1": "colors",
+        "value1": "Green",
+        "attribute2": "drinks",
+        "value2": "Coffee"
+      },
+      {
+        "type": "direct",
+        "description": "The Ukrainian drinks tea",
+        "attribute1": "nationalities",
+        "value1": "Ukrainian",
+        "attribute2": "drinks",
+        "value2": "Tea"
+      },
+      {
+        "type": "rightOf",
+        "description": "The green house is immediately to the right of the white house",
+        "attribute1": "colors",
+        "value1": "Green",
+        "attribute2": "colors",
+        "value2": "White"
+      },
+      {
+        "type": "direct",
+        "description": "The person who smokes Old Gold keeps snails",
+        "attribute1": "cigarettes",
+        "value1": "Old Gold",
+        "attribute2": "pets",
+        "value2": "Snails"
+      },
+      {
+        "type": "direct",
+        "description": "Kool is smoked in the yellow house",
+        "attribute1": "colors",
+        "value1": "Yellow",
+        "attribute2": "cigarettes",
+        "value2": "Kool"
+      },
+      {
+        "type": "position",
+        "description": "Milk is drunk in the middle house",
+        "attribute": "drinks",
+        "value": "Milk",
+        "position": 3
+      },
+      {
+        "type": "position",
+        "description": "The Norwegian lives in the first house",
+        "attribute": "nationalities",
+        "value": "Norwegian",
+        "position": 1
+      },
+      {
+        "type": "neighbor",
+        "description": "The person who smokes Chesterfield lives next to the one who keeps a fox",
+        "attribute1": "cigarettes",
+        "value1": "Chesterfield",
+        "attribute2": "pets",
+        "value2": "Fox"
+      },
+      {
+        "type": "neighbor",
+        "description": "The person who keeps a horse lives next to the one who smokes Kool",
+        "attribute1": "pets",
+        "value1": "Horse",
+        "attribute2": "cigarettes",
+        "value2": "Kool"
+      },
+      {
+        "type": "direct",
+        "description": "The person who smokes Lucky Strike drinks orange juice",
+        "attribute1": "cigarettes",
+        "value1": "Lucky Strike",
+        "attribute2": "drinks",
+        "value2": "Orange Juice"
+      },
+      {
+        "type": "direct",
+        "description": "The Japanese smokes Parliament",
+        "attribute1": "nationalities",
+        "value1": "Japanese",
+        "attribute2": "cigarettes",
+        "value2": "Parliament"
+      },
+      {
+        "type": "neighbor",
+        "description": "The Norwegian lives next to the blue house",
+        "attribute1": "nationalities",
+        "value1": "Norwegian",
+        "attribute2": "colors",
+        "value2": "Blue"
+      }
+    ],
+    "questions": [
+      {
+        "description": "Who owned Zebra?",
+        "targetAttribute": "nationalities",
+        "givenAttribute": "pets",
+        "givenValue": "Zebra"
+      },
+      {
+        "description": "Who drinks water?",
+        "targetAttribute": "nationalities",
+        "givenAttribute": "drinks",
+        "givenValue": "Water"
+      }
+    ]
+  }
+}

@@ -14,7 +14,7 @@ class ArgumentParserTest {
     fun `should parse empty arguments and return default config`() {
         val config = parser.parse(emptyArray())
         
-        assertEquals("input.json", config.inputFile)
+        assertEquals("input_classic.json", config.inputFile)
         assertEquals("json", config.inputFormat)
         assertEquals("output.json", config.outputFile)
         assertEquals("zebra-puzzle.log", config.logFile)
